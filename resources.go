@@ -32,7 +32,7 @@ func (r *resource) toPoints() []*point {
 	points := make([]*point, 10)
 
 	points[0] = &point{
-		Name:        "resource_utime",
+		Name:        "resource_utime_total",
 		Type:        counter,
 		Value:       r.Utime,
 		Description: "user time used in microseconds",
@@ -41,7 +41,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[1] = &point{
-		Name:        "resource_stime",
+		Name:        "resource_stime_total",
 		Type:        counter,
 		Value:       r.Stime,
 		Description: "system time used in microsends",
@@ -59,7 +59,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[3] = &point{
-		Name:        "resource_minflt",
+		Name:        "resource_minflt_total",
 		Type:        counter,
 		Value:       r.Minflt,
 		Description: "total minor faults",
@@ -68,7 +68,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[4] = &point{
-		Name:        "resource_majflt",
+		Name:        "resource_majflt_total",
 		Type:        counter,
 		Value:       r.Majflt,
 		Description: "total major faults",
@@ -77,7 +77,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[5] = &point{
-		Name:        "resource_inblock",
+		Name:        "resource_inblock_total",
 		Type:        counter,
 		Value:       r.Inblock,
 		Description: "filesystem input operations",
@@ -86,7 +86,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[6] = &point{
-		Name:        "resource_oublock",
+		Name:        "resource_oublock_total",
 		Type:        counter,
 		Value:       r.Outblock,
 		Description: "filesystem output operations",
@@ -95,7 +95,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[7] = &point{
-		Name:        "resource_nvcsw",
+		Name:        "resource_nvcsw_total",
 		Type:        counter,
 		Value:       r.Nvcsw,
 		Description: "voluntary context switches",
@@ -104,7 +104,7 @@ func (r *resource) toPoints() []*point {
 	}
 
 	points[8] = &point{
-		Name:        "resource_nivcsw",
+		Name:        "resource_nivcsw_total",
 		Type:        counter,
 		Value:       r.Nivcsw,
 		Description: "involuntary context switches",
@@ -117,6 +117,7 @@ func (r *resource) toPoints() []*point {
 		Type:        gauge,
 		Value:       r.Openfiles,
 		Description: "open files",
+		LabelName:   "resource",
 		LabelValue:  r.Name,
 	}
 

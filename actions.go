@@ -27,7 +27,7 @@ func (a *action) toPoints() []*point {
 	points := make([]*point, 5)
 
 	points[0] = &point{
-		Name:        "action_processed",
+		Name:        "action_processed_total",
 		Type:        counter,
 		Value:       a.Processed,
 		Description: "messages processed",
@@ -36,7 +36,7 @@ func (a *action) toPoints() []*point {
 	}
 
 	points[1] = &point{
-		Name:        "action_failed",
+		Name:        "action_failed_total",
 		Type:        counter,
 		Value:       a.Failed,
 		Description: "messages failed",
@@ -45,7 +45,7 @@ func (a *action) toPoints() []*point {
 	}
 
 	points[2] = &point{
-		Name:        "action_suspended",
+		Name:        "action_suspended_total",
 		Type:        counter,
 		Value:       a.Suspended,
 		Description: "times suspended",
@@ -54,7 +54,7 @@ func (a *action) toPoints() []*point {
 	}
 
 	points[3] = &point{
-		Name:        "action_suspended_duration",
+		Name:        "action_suspended_duration_total",
 		Type:        counter,
 		Value:       a.SuspendedDuration,
 		Description: "time spent suspended",
@@ -63,7 +63,7 @@ func (a *action) toPoints() []*point {
 	}
 
 	points[4] = &point{
-		Name:        "action_resumed",
+		Name:        "action_resumed_total",
 		Type:        counter,
 		Value:       a.Resumed,
 		Description: "times resumed",

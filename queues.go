@@ -37,7 +37,7 @@ func (q *queue) toPoints() []*point {
 	}
 
 	points[1] = &point{
-		Name:        "queue_enqueued",
+		Name:        "queue_enqueued_total",
 		Type:        counter,
 		Value:       q.Enqueued,
 		Description: "total messages enqueued",
@@ -46,7 +46,7 @@ func (q *queue) toPoints() []*point {
 	}
 
 	points[2] = &point{
-		Name:        "queue_full",
+		Name:        "queue_full_total",
 		Type:        counter,
 		Value:       q.Full,
 		Description: "times queue was full",
@@ -55,7 +55,7 @@ func (q *queue) toPoints() []*point {
 	}
 
 	points[3] = &point{
-		Name:        "queue_discarded_full",
+		Name:        "queue_discarded_full_total",
 		Type:        counter,
 		Value:       q.DiscardedFull,
 		Description: "messages discarded due to queue being full",
@@ -64,7 +64,7 @@ func (q *queue) toPoints() []*point {
 	}
 
 	points[4] = &point{
-		Name:        "queue_discarded_not_full",
+		Name:        "queue_discarded_not_full_total",
 		Type:        counter,
 		Value:       q.DiscardedNf,
 		Description: "messages discarded when queue not full",

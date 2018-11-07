@@ -23,7 +23,7 @@ func (i *input) toPoints() []*point {
 	points := make([]*point, 1)
 
 	points[0] = &point{
-		Name:        "input_submitted",
+		Name:        "input_submitted_total",
 		Type:        counter,
 		Value:       i.Submitted,
 		Description: "messages submitted",
